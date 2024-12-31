@@ -64,6 +64,7 @@
             TextBoxProblem.Size = new Size(308, 55);
             TextBoxProblem.TabIndex = 0;
             MainToolTip.SetToolTip(TextBoxProblem, "Double click to reset");
+            TextBoxProblem.DoubleClick += TextBoxProblem_DoubleClick;
             // 
             // PadLayout
             // 

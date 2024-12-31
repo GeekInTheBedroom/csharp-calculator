@@ -110,5 +110,10 @@ namespace csharp_calculator
             DataTable table = new DataTable();
             TextBoxProblem.Text = (Convert.ToDouble(table.Compute(ReplacedSymbolProblem, string.Empty))).ToString();
         }
+
+        private void TextBoxProblem_DoubleClick(object sender, EventArgs e)
+        {
+            TextBoxProblem.Text = string.Empty;
+        }
     }
 }
