@@ -7,6 +7,8 @@ namespace csharp_calculator
             InitializeComponent();
         }
 
+        public bool CanUsePoint = true;
+
         #region Adding numbers to TextBox
         private void ButtonNumber0_Click(object sender, EventArgs e)
         {
@@ -57,6 +59,69 @@ namespace csharp_calculator
         {
             TextBoxProblem.Text += '9';
         }
+
+        private void ButtonPoint_Click(object sender, EventArgs e)
+        {
+            if (TextBoxProblem.Text != string.Empty && CanUsePoint != false)
+            {
+                TextBoxProblem.Text += '.';
+                CanUsePoint = false;
+            }
+        }
         #endregion
+        #region Adding operators to TextBox
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            if (TextBoxProblem.Text != string.Empty)
+            {
+                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
+                {
+                    TextBoxProblem.Text += '+';
+                    CanUsePoint = true;
+                }
+            }
+        }
+
+        private void ButtonSubtract_Click(object sender, EventArgs e)
+        {
+            if (TextBoxProblem.Text != string.Empty)
+            {
+                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
+                {
+                    TextBoxProblem.Text += '-';
+                    CanUsePoint = true;
+                }
+            }
+        }
+
+        private void ButtonMultiply_Click(object sender, EventArgs e)
+        {
+            if (TextBoxProblem.Text != string.Empty)
+            {
+                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
+                {
+                    TextBoxProblem.Text += '×';
+                    CanUsePoint = true;
+                }
+            }
+        }
+
+        private void ButtonDivide_Click(object sender, EventArgs e)
+        {
+            if (TextBoxProblem.Text != string.Empty)
+            {
+                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
+                {
+                    TextBoxProblem.Text += '÷';
+                    CanUsePoint = true;
+                }
+            }
+        }
+        #endregion
+
+        private void ButtonCalculate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

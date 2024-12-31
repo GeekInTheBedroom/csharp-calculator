@@ -112,6 +112,7 @@
             ButtonAdd.TabIndex = 15;
             ButtonAdd.Text = "+";
             ButtonAdd.UseVisualStyleBackColor = false;
+            ButtonAdd.Click += ButtonAdd_Click;
             // 
             // ButtonCalculate
             // 
@@ -125,6 +126,7 @@
             ButtonCalculate.TabIndex = 14;
             ButtonCalculate.Text = "=";
             ButtonCalculate.UseVisualStyleBackColor = false;
+            ButtonCalculate.Click += ButtonCalculate_Click;
             // 
             // ButtonNumber0
             // 
@@ -152,6 +154,7 @@
             ButtonPoint.TabIndex = 12;
             ButtonPoint.Text = ".";
             ButtonPoint.UseVisualStyleBackColor = false;
+            ButtonPoint.Click += ButtonPoint_Click;
             // 
             // ButtonSubtract
             // 
@@ -165,6 +168,7 @@
             ButtonSubtract.TabIndex = 11;
             ButtonSubtract.Text = "-";
             ButtonSubtract.UseVisualStyleBackColor = false;
+            ButtonSubtract.Click += ButtonSubtract_Click;
             // 
             // ButtonNumber3
             // 
@@ -220,6 +224,7 @@
             ButtonMultiply.TabIndex = 7;
             ButtonMultiply.Text = "×";
             ButtonMultiply.UseVisualStyleBackColor = false;
+            ButtonMultiply.Click += ButtonMultiply_Click;
             // 
             // ButtonNumber6
             // 
@@ -275,6 +280,7 @@
             ButtonDivide.TabIndex = 3;
             ButtonDivide.Text = "÷";
             ButtonDivide.UseVisualStyleBackColor = false;
+            ButtonDivide.Click += ButtonDivide_Click;
             // 
             // ButtonNumber9
             // 
