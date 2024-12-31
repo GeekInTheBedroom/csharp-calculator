@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace csharp_calculator
 {
     public partial class Form1 : Form
@@ -7,7 +9,18 @@ namespace csharp_calculator
             InitializeComponent();
         }
 
-        public bool CanUsePoint = true;
+        public static bool CanUsePoint = true;
+        public static void AddOperator(TextBox textBox, char operatorChar)
+        {
+            if (textBox.Text != string.Empty)
+            {
+                if (char.IsNumber(textBox.Text[textBox.Text.Length - 1]))
+                {
+                    textBox.Text += operatorChar;
+                    CanUsePoint = true;
+                }
+            }
+        }
 
         #region Adding numbers to TextBox
         private void ButtonNumber0_Click(object sender, EventArgs e)
@@ -72,56 +85,30 @@ namespace csharp_calculator
         #region Adding operators to TextBox
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            if (TextBoxProblem.Text != string.Empty)
-            {
-                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
-                {
-                    TextBoxProblem.Text += '+';
-                    CanUsePoint = true;
-                }
-            }
+            AddOperator(TextBoxProblem, '+');
         }
 
         private void ButtonSubtract_Click(object sender, EventArgs e)
         {
-            if (TextBoxProblem.Text != string.Empty)
-            {
-                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
-                {
-                    TextBoxProblem.Text += '-';
-                    CanUsePoint = true;
-                }
-            }
+            AddOperator(TextBoxProblem, '-');
         }
 
         private void ButtonMultiply_Click(object sender, EventArgs e)
         {
-            if (TextBoxProblem.Text != string.Empty)
-            {
-                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
-                {
-                    TextBoxProblem.Text += '×';
-                    CanUsePoint = true;
-                }
-            }
+            AddOperator(TextBoxProblem, '×');
         }
 
         private void ButtonDivide_Click(object sender, EventArgs e)
         {
-            if (TextBoxProblem.Text != string.Empty)
-            {
-                if (char.IsNumber(TextBoxProblem.Text[TextBoxProblem.Text.Length - 1]))
-                {
-                    TextBoxProblem.Text += '÷';
-                    CanUsePoint = true;
-                }
-            }
+            AddOperator(TextBoxProblem, '÷');
         }
         #endregion
 
         private void ButtonCalculate_Click(object sender, EventArgs e)
         {
-
+            string ReplacedSymbolProblem = TextBoxProblem.Text.Replace('×', '*').Replace('÷', '/');
+            DataTable table = new DataTable();
+            TextBoxProblem.Text = (Convert.ToDouble(table.Compute(ReplacedSymbolProblem, string.Empty))).ToString();
         }
     }
 }
