@@ -1,6 +1,8 @@
-# Programming Language
-This project was made with C#
-# .NET Version
-This project was made with .NET 8.0 version for long term support
+# Programming Language and Framework
+This project was made with C# and .NET framework 8.0 for long term support
 # Little Story
-This project is an AI generated idea (Level: Beginner-Friendly Projects). Btw, I'm still a student rn 2024 :)
+I didn't know what to do so I decided to ask an AI for ideas.
+I decided to choose a "Level: Beginner-Friendly Project" to do and that's the calculator.
+
+![screenshot of ai prompt](images/aiprompt_screenshot.png)
+![screenshot of calculator](images/form_screenshot.png)
